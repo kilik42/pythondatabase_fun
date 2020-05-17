@@ -45,3 +45,18 @@ def delete_one(id):
     # commit and close
     conn.commit()
     conn.close()
+
+# add many records
+def add_many(list):
+    #connect connection to db
+    conn = sqlite3.connect('customer.db')
+    c = conn.cursor()
+
+    # add list into database
+    c.executemany("INSERT into customers VALUES (?,?,?)", (list))
+
+
+
+    # commit and close
+    conn.commit()
+    conn.close()
