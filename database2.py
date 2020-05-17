@@ -60,3 +60,22 @@ def add_many(list):
     # commit and close
     conn.commit()
     conn.close()
+
+
+#lookup with where
+def email_lookup(email):
+    #connect connection to db
+    conn = sqlite3.connect('customer.db')
+    c = conn.cursor()
+
+    # delete id from database
+    c.execute("SELECT rowid, * from customers WHERE email = (?)", (email,))
+    items = c.fetchall()
+
+    for item in items:
+        print(item)
+
+
+    # commit and close
+    conn.commit()
+    conn.close()

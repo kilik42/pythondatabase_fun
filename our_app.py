@@ -8,12 +8,14 @@ import database2
 
 
 # add many records
-stuff =[
-    ('brenda','smiter','brenda@smiter.com'),
-    ('jake','dumas','jakedumas@gmex.com')
-]
+#stuff =[
+#    ('brenda','smiter','brenda@smiter.com'),
+#    ('jake','dumas','jakedumas@gmex.com')
+#]
 
 
-database2.add_many(stuff)
+#database2.add_many(stuff)
 
+
+database2.email_lookup("john@codemy.com")
 database2.show_all()
